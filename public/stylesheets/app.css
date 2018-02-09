@@ -1,0 +1,265 @@
+h1 {
+    font-family: 'Mr De Haviland', cursive;
+    font-size: 125px;
+    font-weight: 100;
+    text-align: center;
+    color: black;
+    margin-bottom: 0px;
+    line-height: 1.1em;
+    padding-top: 75px;
+    padding-bottom: 20px;
+    letter-spacing: 4;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 3px;
+    font-size: 24px;
+    color: black;
+}
+
+hr {
+    background-color: rgba(255,182,193, 0.9);
+    height: 2px;
+    border: 0px;
+    margin: 0px;
+}
+
+p {
+    white-space:pre-wrap;
+}
+
+.border {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.bottom {
+    background-color: rgba(255,182,193, 0.2);
+}
+
+.container.main {
+    margin-top: 7.0em;
+}
+
+.description {
+    color: #797977;
+    line-height: 4;
+    letter-spacing: 1px;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+}
+
+.description:First-Letter {
+    color: rgba(255,182,193, 0.9);
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    font-size: 40px;
+    padding-right: 5px;
+    font-family: 'Parisienne', cursive;
+}
+
+.extra {
+    text-align: right;
+}
+
+.footer {
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+.icon {
+    width: 25px;
+    color: silver;
+}
+
+.itemIcon {
+    color: rgb(255,182,193);    
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.medium.bordered.image {
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: baseline;
+}
+
+.meta {
+    text-align: center;
+    margin: 5px;
+}
+
+.old {
+    text-align: right;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2;
+    font-weight: bolder;
+    padding-bottom: 20px;
+    text-decoration: none;
+}
+
+.secondary.pointing.menu{
+    background-color: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0px 0px 10px 1px #000000;
+}
+
+.ui.block.header {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 0px;
+}
+
+.ui.block {
+    width: 100%;
+}
+
+.ui.text.container {
+    margin-top: 20px;
+}
+
+#aboutMe {
+    text-align: center;
+}
+
+#aboutMeImage {
+    height: 200px;
+    width: auto;
+    border-radius: 100%;
+}
+
+#aboutMeText {
+    text-align: justify;
+    color: #797977;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-size: 12.5px;
+    -webkit-font-smoothing: antialiased;
+    padding-top: 10px;
+}
+
+#blogBody {
+    padding-top: 25px;
+    padding-bottom: 40px;
+}
+
+#button {
+    display: inline-block;
+    padding-top: 20px;
+}
+
+#category {
+    text-transform: uppercase;
+    position: absolute;
+    left: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+}
+
+#copyright {
+    padding-bottom: 25px;
+    padding-top: 25px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2;
+    font-weight: bold;
+}
+
+#date {
+    text-align: center;
+    border: 1px black solid;
+    color: black;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2;
+    font-weight: bold;
+}
+
+#delete {
+    width: 20%;
+}
+
+#follow {
+    font-size: 60px;    
+    line-height: 40px;
+    padding-top: 25px;
+}
+
+#icon {
+    font-size: 18px;
+    display: inline;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: rgb(255,182,193);
+    text-decoration: none;
+}
+
+#insta {
+    text-align: center;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+
+#instagram {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+#link {
+    color: white;
+    text-transform: uppercase;
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+}
+
+#link:hover {
+    color: rgb(255,182,193);
+}
+
+#link.active.item {
+    text-decoration: none;
+    color: rgb(255,182,193);
+}
+
+#old {
+    text-decoration: none;
+    color: black;
+}
+
+#postLine {
+    margin-top: 10px;
+}
+
+#postLink {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+}
+
+#social {
+    text-align: center;
+}
+
+#title {
+    text-align: center;
+}

@@ -1,0 +1,62 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Edit <%= blog.title %></div>
+    <form class="ui form" action="/posts/<%= blog._id %>?_method=PUT" method="POST">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="blog[title]" value="<%= blog.title %>">
+        </div>        
+        <div class="field">
+            <label>Image</label>
+            <input type="text" name="blog[image]" value="<%= blog.image %>">
+        </div>    
+        <div class='field'>
+            <label>Categories</label>
+            <select class='form-control' name="blog[category1]">
+                <option value="" disabled selected><%= blog.category1 %></option>
+                <option value="Pregnancy">Pregnancy</option>
+                <option value="Littles">Littles</option>
+                <option value="Home Decor">Home Decor</option>
+                <option value="Recipes">Recipes</option>
+                <option value="Mama Things">Mama Things</option>
+                <option value="Baby Things">Baby Things</option>
+                <option value="Kid Things">Kid Things</option>
+                <option value="Kid Things">Jolie's Journey Things</option>
+            </select>
+        </div>     
+        <div class='field'>
+            <select class='form-control' name="blog[category2]">
+                <option value="" disabled selected><%= blog.category2 %></option>
+                <option value="Pregnancy">Pregnancy</option>
+                <option value="Littles">Littles</option>
+                <option value="Home Decor">Home Decor</option>
+                <option value="Recipes">Recipes</option>
+                <option value="Mama Things">Mama Things</option>
+                <option value="Baby Things">Baby Things</option>
+                <option value="Kid Things">Kid Things</option>
+                <option value="Kid Things">Jolie's Journey Things</option>
+            </select>
+        </div>     
+        <div class='field'>
+            <select class='form-control' name="blog[category3]">
+                <option value="" disabled selected><%= blog.category3 %></option>
+                <option value="Pregnancy">Pregnancy</option>
+                <option value="Littles">Littles</option>
+                <option value="Home Decor">Home Decor</option>
+                <option value="Recipes">Recipes</option>
+                <option value="Mama Things">Mama Things</option>
+                <option value="Baby Things">Baby Things</option>
+                <option value="Kid Things">Kid Things</option>
+                <option value="Kid Things">Jolie's Journey Things</option>
+            </select>
+        </div>
+        <div class="field">
+            <label>Blog Content</label>
+            <textarea name="blog[body]"><%= blog.body %></textarea>
+        </div>
+        <input type="submit" class="ui green inverted button">
+    </form>
+</div>
+
+<% include ./partials/footer %>
