@@ -57,16 +57,34 @@ app.get("/", function(req, res){
     res.redirect("/posts");
 });
 
-app.get('/motherhood', function(req, res){
-    res.render('motherhood');
+app.get('/categories/motherhood', function(req, res){
+    Blog.find({}, function(err, blogs){
+       if(err){
+           console.log(err);
+       } else {
+           res.render("categories/motherhood", {blogs: blogs});
+       }
+   });
 });
 
-app.get('/interiorstyle', function(req, res){
-    res.render('interiorstyle');
+app.get('/categories/interiorstyle', function(req, res){
+    Blog.find({}, function(err, blogs){
+       if(err){
+           console.log(err);
+       } else {
+           res.render("categories/interiorstyle", {blogs: blogs});
+       }
+   });
 });
 
-app.get('/wellness', function(req, res){
-    res.render('wellness');
+app.get('/categories/wellness', function(req, res){
+       Blog.find({}, function(err, blogs){
+       if(err){
+           console.log(err);
+       } else {
+           res.render("categories/wellness", {blogs: blogs});
+       }
+   });
 });
 
 app.get('/about', function(req, res){
@@ -77,9 +95,16 @@ app.get('/contact', function(req, res){
     res.render('contact');
 });
 
-app.get('/archive', function(req, res){
-    res.render('archive');
+app.get('/categories/archive', function(req, res){
+    Blog.find({}, function(err, blogs){
+   if(err){
+       console.log(err);
+   } else {
+       res.render("categories/archive", {blogs: blogs});
+   }
+    });
 });
+
 
 app.get("/posts", function(req, res){
    Blog.find({}, function(err, blogs){

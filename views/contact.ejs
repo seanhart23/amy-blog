@@ -1,10 +1,30 @@
 <% include ./partials/header %>
 
 <div class='ui container'>
-
+    <h2 class='category'>Contact</h2>
 <div class="ui grid">
     <div class="twelve wide column">
-        <h2>Contact</h2>
+        <div class='ui form'>
+            <form action="contact.php" method="post">
+                <div class='field'>
+                    <label>Your Name:</label>
+                    <input type="text" name="yourname">
+                </div>
+                <div class='field'>
+                    <label>Subject:</label>
+                    <input type="text" name="subject" />
+                </div>    
+                <div class='field'>
+                    <label>E-mail:</label>
+                    <input type="text" name="email" />
+                </div>
+                <div class='field'>
+                    <label>Comments:</label>
+                    <textarea name="comments" rows="10" cols="40"></textarea>
+                </div>
+                <input type="submit" value="Send"></p>
+            </form>
+        </div>    
     </div>
 
     <div class="four wide column">
@@ -19,7 +39,7 @@
         <h3 class="ui block header">Follow Along & Subscribe</h3>
         <div class='ui container' id='social'>
             <a href='https://www.instagram.com/hart_to_hearts/?hl=en' target=_blank id='icon'><i class="fab fa-instagram"></i></a>
-            <div id='icon'><i class="fab fa-pinterest"></i></div>
+            <a href='https://www.pinterest.com/hart_to_hearts/' target=_blank id='icon'><i class="fab fa-pinterest"></i></a>
             <a href='https://www.bloglovin.com/blogs/hart-to-hearts-11975363' target=_blank id='icon'><i class="fas fa-plus"></i></a>
         </div>
         <h3 class="ui block header">Blog Archive</h3>
