@@ -144,6 +144,13 @@ app.post("/posts", middleware.isLoggedIn, function(req, res){
     });
 });
 
+app.post('/send_form_email'), function(req, res){
+    if(err){
+        res.render('contact');
+    } else {
+        res.redirect('/send_form_email.php');
+    }
+};
 //SHOW ROUTE
 app.get("/posts/:id", function(req, res){
     Blog.findById(req.params.id, function(err, foundBlog){
