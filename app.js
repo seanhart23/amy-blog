@@ -133,6 +133,17 @@ app.post("/posts", middleware.isLoggedIn, function(req, res){
     });
 });
 
+app.post("/posts", middleware.isLoggedIn, function(req, res){
+    req.body.blog.body = req.sanitize(req.body.blog.body);
+    Blog.create(req.body.blog, function(err, newBlog){
+        if(err){
+            res.render("new");
+        } else {
+            res.redirect("/posts");
+        }
+    });
+});
+
 //SHOW ROUTE
 app.get("/posts/:id", function(req, res){
     Blog.findById(req.params.id, function(err, foundBlog){
