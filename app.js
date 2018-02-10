@@ -14,7 +14,8 @@ var expressSanitizer = require("express-sanitizer"),
 var request          = require('request');
 
 //APP CONFIG
-mongoose.connect("mongodb://localhost/amy_blog");
+// mongoose.connect("mongodb://localhost/amy_blog");
+mongoose.connect('mongodb://amyhart23:maem2501@ds231588.mlab.com:31588/hart_to_hearts');
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
