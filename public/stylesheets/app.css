@@ -35,6 +35,10 @@ img.ui.small.image {
     width: auto;
 }
 
+label {
+    font-weight: bold;
+}
+
 p {
     white-space:pre-wrap;
 }
@@ -59,6 +63,12 @@ p {
     border-bottom: 1px solid lightgray;
     margin-bottom: 50px;
     font-size: 26px;
+}
+
+.contactForm {
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
 }
 
 .container.main {

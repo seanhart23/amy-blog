@@ -1,7 +1,9 @@
 <% include ./partials/header %>
 
 <div class='ui container'>
-
+   <% if(currentUser){ %>
+        <a href='/posts/new' class='ui secondary mini button'>New Post</a><p></p>
+    <% } %>
 <div class="ui grid">
     <div class="twelve wide column">
         <% blogs.slice(-3).reverse().forEach(function(blog){ %>
