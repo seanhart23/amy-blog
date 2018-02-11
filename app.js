@@ -2,6 +2,7 @@ var expressSanitizer = require("express-sanitizer"),
     methodOverride   = require('method-override'),
     LocalStrategy    = require('passport-local'),
     bodyParser       = require('body-parser'),
+    nodeMailer       = require('nodemailer'),
     passport         = require('passport'),
     mongoose         = require('mongoose'),
     express          = require('express'),
@@ -10,7 +11,7 @@ var expressSanitizer = require("express-sanitizer"),
     User             = require('./models/user'),
     middleware       = require('./middleware'),
     app              = express();
-    
+
 var request          = require('request');
 
 //APP CONFIG
@@ -118,7 +119,7 @@ app.get("/posts", function(req, res){
 });
 
 app.get("/posts/new", middleware.isLoggedIn, function(req, res){
-   res.render("new") 
+   res.render("new"); 
 });
 
 //CREATE ROUTE
@@ -144,13 +145,6 @@ app.post("/posts", middleware.isLoggedIn, function(req, res){
     });
 });
 
-app.post('/send_form_email'), function(req, res){
-    if(err){
-        res.render('contact');
-    } else {
-        res.redirect('/send_form_email.php');
-    }
-};
 //SHOW ROUTE
 app.get("/posts/:id", function(req, res){
     Blog.findById(req.params.id, function(err, foundBlog){
@@ -228,6 +222,42 @@ app.get('/logout', function(req, res){
     req.logout();
     res.redirect('/');
 });
+
+//EMAIL SETUP
+var port = 3000;
+    app.post('/send-email', function (req, res) {
+      let transporter = nodeMailer.createTransport({
+          host: 'smtp.gmail.com',
+          port: 465,
+          secure: true,
+          auth: {
+              user: 'seanhart23@gmail.com',
+              pass: 'omcmozfdzkhkyzif'
+          }
+      });
+          var body = req.body.body;
+          var name = req.body.name;
+          var email = req.body.email;
+          var subject = req.body.subject;
+          
+      let mailOptions = {
+          from: name, // sender address
+          to: '<seanhart23@gmail.com>, <hart.amylynn@gmail.com>',
+          subject: "Message from Hart to Hearts: " + subject,
+          html: "<b>Name: </b>" + name + "<p><b>E-mail Address: </b>" + email + "<p><b>Message: </b>" + body
+      };
+
+      transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+              return console.log(error);
+          }
+          console.log('Message %s sent: %s', info.messageId, info.response);
+              res.render('contactSuccess');
+          });
+      });
+          app.listen(port, function(){
+            console.log('Server is running at port: ',port);
+          });
 
 //TELL APP TO LISTEN TO PORT AND IP
 app.listen(process.env.PORT, process.env.IP, function(){
