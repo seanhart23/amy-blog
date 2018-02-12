@@ -15,7 +15,6 @@ h2 {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     padding-top: 10px;
-    padding-bottom: 10px;
     letter-spacing: 3px;
     font-size: 24px;
     color: black;
@@ -63,6 +62,12 @@ p {
     border-bottom: 1px solid lightgray;
     margin-bottom: 50px;
     font-size: 26px;
+}
+
+.commentBox {
+    height: auto;
+    border-top: 1px solid #f3f3f3;
+    padding: 20px 0px;
 }
 
 .contactForm {
@@ -116,6 +121,10 @@ p {
     text-decoration: none;
     font-size: 17px;
     -webkit-font-smoothing: antialiased;
+}
+
+.itemIcon:hover {
+    color: rgb(255,182,193);
 }
 
 .medium.bordered.image {
@@ -210,6 +219,14 @@ p {
     left: 15px;
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
+}
+
+#commentButton {
+    margin-bottom: 15px;
+}
+
+#commentCount {
+    display: inline;
 }
 
 #copyright {

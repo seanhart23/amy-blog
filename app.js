@@ -9,6 +9,8 @@ var expressSanitizer = require("express-sanitizer"),
     request          = require("express"),
     router           = express.Router(),
     User             = require('./models/user'),
+    Blog             = require('./models/blogpost'),  
+    Comment          = require('./models/comment'),  
     middleware       = require('./middleware'),
     app              = express();
 
@@ -40,19 +42,6 @@ app.use(function(req, res, next){
     res.locals.currentUser = req.user;
     next();
 });
-
-//MONGOOSE MODEL/CONFIG
-var blogSchema = new mongoose.Schema({
-    title: String,
-    image: String,
-    category1: String,
-    category2: String,
-    category3: String,
-    body:  String,
-    created: {type: Date, default: Date.now}
-});
-
-var Blog = mongoose.model("Blog", blogSchema);
 
 //RESTFUL ROUTES
 app.get("/", function(req, res){
@@ -107,7 +96,6 @@ app.get('/categories/archive', function(req, res){
     });
 });
 
-
 app.get("/posts", function(req, res){
    Blog.find({}, function(err, blogs){
        if(err){
@@ -147,7 +135,7 @@ app.post("/posts", middleware.isLoggedIn, function(req, res){
 
 //SHOW ROUTE
 app.get("/posts/:id", function(req, res){
-    Blog.findById(req.params.id, function(err, foundBlog){
+    Blog.findById(req.params.id).populate("comments").exec(function(err, foundBlog){
         if(err){
             res.redirect("/posts");
         } else {
@@ -259,6 +247,53 @@ var port = 3000;
             console.log('Server is running at port: ',port);
           });
 
+//COMMENTS
+
+app.get("/posts/:id/comments/new", function(req, res){
+    //FIND CAMPGROUND PAGE BY USING THE ID
+    Blog.findById(req.params.id, function(err, blog){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("comments/new", {blog: blog});
+        }
+    });
+});
+
+app.post("/posts/:id/comments", function(req, res){
+   //LOOKUP CAMPGROUND USING ID
+   Blog.findById(req.params.id, function(err, blog){
+        if(err){
+            console.log(err);
+            res.redirect("/posts")
+        } else {
+    //CREATE NEW COMMENT
+    console.log(req.body.comment)
+            Comment.create(req.body.comment, function(err, comment){
+                if(err){
+                    console.log(err);
+                } else {
+    //CONNECT THE NEW COMMENT TO CAMPGROUND
+                    blog.comments.push(comment);
+                    blog.save();
+    //REDIRECT TO CAMPGROUND SHOW PAGE
+                    res.redirect("/posts/" + blog._id);
+                }
+            });
+        }
+   });
+});
+
+//COMMENT DESTROY ROUTE
+app.delete('/posts/:id/comments/:comment_id', function(req, res){
+    Comment.findByIdAndRemove(req.params.comment_id, function(err){
+        if(err){
+            res.redirect('back');
+        } else {
+            res.redirect('/posts/' + req.params.id);
+        }
+    });
+});
 //TELL APP TO LISTEN TO PORT AND IP
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("================================");

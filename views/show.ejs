@@ -12,7 +12,7 @@
         </div>
         <div class="item" id='title'>
             <h2><%= blog.title %></h2>
-        </div>
+        </div><br>
     <div class="ui top attached">
         <div class="item">
             <img class="ui fluid image" src="<%= blog.image %>" width="300px">
@@ -26,6 +26,26 @@
             </form></span>
             <% } %>
             </div>
+    </div>
+    <div>
+        <h2>Comments</h2><h3 id='commentCount'>(<%= blog.comments.length %> Comments)</h3>
+        <br><br><a href='<%= blog._id %>/comments/new' class='ui mini button' id='commentButton'>Add a comment</a>
+        <% blog.comments.forEach(function(comment) {%>
+        <div class='commentBox'>
+            <% var date = new Date(comment.created); %>
+            <span id='date'><%= date.toDateString('en-US') %></span><p></p>
+        <strong>
+            <%= comment.author %>
+        </strong><br>
+            <%= comment.text %>
+        <% if(currentUser){ %>
+            <form action="/posts/<%= blog._id %>/comments/<%= comment._id %>?_method=DELETE" method='POST' class='delete-form'>
+                <br>
+                <input type='submit' class="ui mini red button" value='Delete'>
+            </form>
+        <% } %>
+        </div>
+        <% }) %>
     </div>
     </div>
     <% include ./partials/rightrail %>
