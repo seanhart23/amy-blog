@@ -241,7 +241,7 @@ var port = 3000;
           var subject = req.body.subject;
           
       let mailOptions = {
-          from: name, // sender address
+          from: name + '<seanhart23@gmail.com>', // sender address
           to: '<seanhart23@gmail.com>, <hart.amylynn@gmail.com>',
           subject: "Message from Hart to Hearts: " + subject,
           html: "<b>Name: </b>" + name + "<p><b>E-mail Address: </b>" + email + "<p><b>Message: </b>" + body

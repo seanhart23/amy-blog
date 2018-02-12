@@ -2,6 +2,7 @@
 
 <div class='ui container'>
     <h2 class='category'>Archive</h2>
+    
 <div class="ui grid">
     <div class="twelve wide column">
         <% blogs.reverse().forEach(function(blog){ %>
@@ -24,40 +25,7 @@
         <br>
         <% }) %>
     </div>
-    <div class="four wide column">
-        <h3 class="ui block header">About Me</h3>
-        <div id='aboutMe'>
-            <img src='/images/Amy.jpg' id='aboutMeImage'><br>
-            <div id='aboutMeText'>
-            Hi friend, welcome to my blog! I'm Amy, wife to my college sweetheart Sean, mama to our 3 littles Mason, Emory and Jolie and fur mama to our lab Maggie.
-            Follow along as I write about life as I know it from my "hart" to yours!
-            </div>
-        </div>
-        <h3 class="ui block header">Follow Along & Subscribe</h3>
-        <div class='ui container' id='social'>
-            <a href='https://www.instagram.com/hart_to_hearts/?hl=en' target=_blank id='icon'><i class="fab fa-instagram"></i></a>
-            <a href='https://www.pinterest.com/hart_to_hearts/' target=_blank id='icon'><i class="fab fa-pinterest"></i></a>
-            <a href='https://www.bloglovin.com/blogs/hart-to-hearts-11975363' target=_blank id='icon'><i class="fas fa-plus"></i></a>
-        </div>
-        <h3 class="ui block header">Blog Archive</h3>
-        <div class="ui selection dropdown fluid simple">
-            <input type="hidden" name="gender">
-            <i class="dropdown icon"></i>
-            <div class="default text">Choose Month</div>
-            <div class="menu">
-                <div class="item" data-value="1">January</div>
-                <div class="item" data-value="2">February</div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-<div class='bottom'>
-    <h1 id='follow'>Follow Along on <div id='instagram'>Instagram</div></h1>
-    <div id='insta' class='ui container'>
-        <iframe src="https://snapwidget.com/embed/505387" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height:150px"></iframe>
-    </div>
+    <% include ../partials/rightrail %>
 </div>
 
 <% include ../partials/footer %>
