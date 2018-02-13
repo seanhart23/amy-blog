@@ -1,5 +1,7 @@
 var $;
 
+//ACTIVE LINK CLASS CHANGE
+
 $(function() {
     var nav = document.getElementById("nav"),
         anchor = nav.getElementsByTagName("a"),
@@ -10,6 +12,8 @@ $(function() {
     }
     }
 });
+
+//PAGE TRANSITION
 
 var speed = 'slow';
 

@@ -10,43 +10,48 @@
             <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
             <span id='date'><%= date.toLocaleDateString('en-us', options) %></span>
         </div>
-        <div class="item" id='title'>
-            <h2><%= blog.title %></h2>
-        </div><br>
-    <div class="ui top attached">
         <div class="item">
-            <img class="ui fluid image" src="<%= blog.image %>" width="300px">
-            <div class="description" id='blogBody'>
-                <p><%- blog.body %></p>
-            </div>
-            <%if(currentUser){ %>
-            <span id='button'><a href="/posts/<%= blog._id %>/edit" class="ui mini primary button">Edit</a></span>
-            <span id='button'><form method="POST" action="/posts/<%= blog._id %>?_method=DELETE" id="delete">
-                <button class="ui mini button">Delete</button>
-            </form></span>
-            <% } %>
-            </div>
-    </div>
-    <div>
-        <h2>Comments</h2><h3 id='commentCount'>(<%= blog.comments.length %> Comments)</h3>
-        <br><br><a href='<%= blog._id %>/comments/new' class='ui mini button' id='commentButton'>Add a comment</a>
-        <% blog.comments.forEach(function(comment) {%>
-        <div class='commentBox'>
-            <% var date = new Date(comment.created); %>
-            <span id='date'><%= date.toDateString('en-US') %></span><p></p>
-        <strong>
-            <%= comment.author %>
-        </strong><br>
-            <%= comment.text %>
-        <% if(currentUser){ %>
-            <form action="/posts/<%= blog._id %>/comments/<%= comment._id %>?_method=DELETE" method='POST' class='delete-form'>
-                <br>
-                <input type='submit' class="ui mini red button" value='Delete'>
-            </form>
-        <% } %>
+            <h2 id='title'><%= blog.title %></h2>
         </div>
-        <% }) %>
-    </div>
+        <div class="ui top attached">
+            <div class="item">
+                <img class="ui fluid image" src="<%= blog.image %>" width="300px">
+                <div class="description" id='blogBody'>
+                    <p><%- blog.body %></p>
+                    <div class='postFooter'>
+                <span>Topic: <%= blog.category1 %><% if(blog.category2){ %>, <% }; %><%= blog.category2 %><% if(blog.category3){ %>, <% }; %><%= blog.category3 %><div class='shareButtons'>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://limitless-caverns-66212.herokuapp.com/posts/<%= blog._id %>" target='_blank' title='Share on Facebook' src=sdkpreparse><i class="fab fa-facebook-square postItemIcon"></i></a>
+                    <a href="https://pinterest.com/pin/create/link/?url=https://limitless-caverns-66212.herokuapp.com/posts/<%= blog._id %>&media=<%= blog.image %>" titel='Share on Pinterest' target='_blank'><i class="fab fa-pinterest-square postItemIcon"></i></a>    
+                    <a href="https://twitter.com/share?url=https://limitless-caverns-66212.herokuapp.com/posts/<%= blog._id %>" target='_blank' title='Share on Twitter'><i class="fab fa-twitter-square postItemIcon"></i></a>    
+            </div>
+        </div>
+                    <%if(currentUser){ %>
+                            <span id='button'><a href="/posts/<%= blog._id %>/edit" class="ui mini primary button">Edit</a></span>
+                            <span id='button'><form method="POST" action="/posts/<%= blog._id %>?_method=DELETE" id="delete"></form></span>
+                            <button class="ui mini red button">Delete</button>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div id='commentSection'>
+            <h3 id='commentCount'><%= blog.comments.length %> <% if(blog.comments.length === 1){ %>Comment
+                <% } else { %>Comments<% } %>
+            </h3>
+            <a href='<%= blog._id %>/comments/new' id='commentButton'>Add a comment</a><br>
+            <% blog.comments.forEach(function(comment) {%>
+                <div class='commentBox'>
+                    <% var date = new Date(comment.created); %>
+                        <span id='commentDate'><%= date.toDateString('en-US') %></span>
+                        <span id='username'><i class="fa fa-user" aria-hidden="true"></i> <%= comment.author %></span>
+                        <span id='commentText'><%= comment.text %></span>
+                        <% if(currentUser){ %>
+                            <form action="/posts/<%= blog._id %>/comments/<%= comment._id %>?_method=DELETE" method='POST' class='delete-form'>
+                                <input type='submit' class="ui mini red button" value='Delete'>
+                            </form>
+                        <% } %>
+                </div>
+            <% }) %>
+        </div>
     </div>
     <% include ./partials/rightrail %>
 </div>

@@ -1,5 +1,4 @@
-var expressSanitizer = require("express-sanitizer"),
-    methodOverride   = require('method-override'),
+var methodOverride   = require('method-override'),
     LocalStrategy    = require('passport-local'),
     bodyParser       = require('body-parser'),
     nodeMailer       = require('nodemailer'),
@@ -22,7 +21,6 @@ mongoose.connect('mongodb://amyhart23:maem2501@ds231588.mlab.com:31588/hart_to_h
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(expressSanitizer());
 app.use(methodOverride("_method"));
 
 //PASSPORT CONFIGURATION
@@ -112,7 +110,6 @@ app.get("/posts/new", middleware.isLoggedIn, function(req, res){
 
 //CREATE ROUTE
 app.post("/posts", middleware.isLoggedIn, function(req, res){
-    req.body.blog.body = req.sanitize(req.body.blog.body);
     Blog.create(req.body.blog, function(err, newBlog){
         if(err){
             res.render("new");
@@ -123,7 +120,6 @@ app.post("/posts", middleware.isLoggedIn, function(req, res){
 });
 
 app.post("/posts", middleware.isLoggedIn, function(req, res){
-    req.body.blog.body = req.sanitize(req.body.blog.body);
     Blog.create(req.body.blog, function(err, newBlog){
         if(err){
             res.render("new");
@@ -157,7 +153,6 @@ app.get("/posts/:id/edit", function(req, res){
 
 //UPDATE ROUTE
 app.put("/posts/:id", function(req, res){
-    req.body.blog.body = req.sanitize(req.body.blog.body);
     Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
         if(err){
             res.redirect("/posts");

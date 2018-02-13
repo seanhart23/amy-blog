@@ -6,25 +6,27 @@
 <div class="ui grid">
     <div class="twelve wide column">
         <% blogs.reverse().forEach(function(blog){ %>
-                    <% var date = new Date(blog.created); %>
-                    <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
-        <div class="meta">
-            <span id='date'><%= date.toLocaleDateString('en-us', options) %></span>
+       <% var date = new Date(blog.created); %>
+       <% var date = new Date(blog.created); %>
+        <% var options = {month: "long", day: "numeric", year: "numeric"};%>  
+    <div id='blogTile'>
+        <span id='previewDate'><%= date.toLocaleDateString('en-us', options) %></span>
+        <h4 class="item" id='previewTitle'>
+            <%= blog.title %>
+        </h4>
+        <div class="item">
+            <img src="<%= blog.image %>" class="ui fluid image"  id='blogTileImage'>
         </div>
-        <div class="item" id='title'>
-            <h2><%= blog.title %></h2>
+        <div class="item">
+            <a href="/posts/<%= blog._id %>" class='ui default button' id='blogTileButton'>View Post</a>
         </div>
-        <div class="ui top attached">
-            <div class="item">
-                <img class="ui fluid image" src="<%= blog.image %>" width="300px">
-                <div class="description" id='blogBody'>
-                    <p><%- blog.body %></p>
-                </div>
-            </div>
+        <div class='item' id='previewCommentCount'>
+            <%= blog.comments.length %> <% if(blog.comments.length === 1){ %>Comment
+                <% } else { %>Comments<% } %>
         </div>
-        <br>
-        <% }) %>
     </div>
+<% }) %>
+</div>
     <% include ../partials/rightrail %>
 </div>
 

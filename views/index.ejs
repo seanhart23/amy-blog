@@ -25,14 +25,14 @@
                         </div>
                         <hr id='postLine'>
                         <div class="extra">
-                            <span id='category'>Topic: <%= blog.category1 %> <%= blog.category2 %> <%= blog.category3 %></span>
+                            <span id='category'>Topic: <%= blog.category1 %><% if(blog.category2){ %>, <% }; %><%= blog.category2 %><% if(blog.category3){ %>, <% }; %><%= blog.category3 %></span>
                             <a href="/posts/<%= blog._id %>" id='postLink'>Read More . . .</a>
                         </div>
                     </div> 
                 </div>
                 <div class='eight wide column'>
-                    <div class="image">
-                        <img class="ui medium bordered image" src="<%= blog.image %>">
+                    <div id="image">
+                        <img class="ui bordered image" src="<%= blog.image %>">
                     </div>
                 </div>
             </div>

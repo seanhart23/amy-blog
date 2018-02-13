@@ -67,7 +67,9 @@ p {
 .commentBox {
     height: auto;
     border-top: 1px solid #f3f3f3;
-    padding: 20px 0px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    min-height: 100px;
 }
 
 .contactForm {
@@ -78,6 +80,10 @@ p {
 
 .container.main {
     margin-top: 7.0em;
+}
+
+.delete-form {
+    margin-top: 15px;
 }
 
 .description {
@@ -101,6 +107,10 @@ p {
     text-align: right;
 }
 
+.fa-user {
+    font-size: 13px;
+}
+
 .footer {
     background-color: black;
     text-align: center;
@@ -114,6 +124,12 @@ p {
 .icon {
     width: 25px;
     color: silver;
+}
+
+#image {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
 }
 
 .itemIcon {
@@ -149,6 +165,29 @@ p {
     text-decoration: none;
 }
 
+.postFooter {
+    border-top: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+.postItemIcon {
+    color: rgba(0, 0, 0, 0.2);   
+    text-decoration: none;
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -3px;
+}
+
+.postItemIcon:hover {
+    color: rgb(255,182,193);
+}
+
 .secondary.pointing.menu{
     background-color: transparent;
     color: black;
@@ -158,6 +197,10 @@ p {
     border: none;
     letter-spacing: 2;
     /*box-shadow: 0px 0px 10px 1px #000000;*/
+}
+
+.shareButtons {
+    float: right;
 }
 
 .ui.block.header {
@@ -208,9 +251,38 @@ p {
     padding-bottom: 40px;
 }
 
+#blogTile {
+    /*border: 2px solid #f3f3f3;*/
+    padding: 5px;
+    width: 22.75%;
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
+}
+
+#blogTileButton{
+    width: 100%;
+    margin-top: 10px;
+    background-color: rgba(255,182,193, 0.2);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: black;
+    border-radius: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+#blogTileImage {
+    height: 180px;
+    width: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 #button {
     display: inline-block;
-    padding-top: 20px;
+    margin-bottom: 10px;
+    font-size: 12px;
 }
 
 #category {
@@ -222,11 +294,26 @@ p {
 }
 
 #commentButton {
-    margin-bottom: 15px;
+    text-decoration: none;
+    float: right;
 }
 
 #commentCount {
-    display: inline;
+    margin-bottom: 20px;
+}
+
+#commentDate {
+    float: right;
+    padding-top:0px;
+}
+
+#commentSection {
+    margin-bottom: 50px;
+}
+#commentText {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
 }
 
 #copyright {
@@ -299,6 +386,10 @@ p {
     border-bottom: 1px solid black;
 }
 
+#mainContent {
+    padding-top: 7px;
+}
+
 #nav {
     border: none;
 }
@@ -308,6 +399,32 @@ p {
     color: black;
     font-size: 13px;
     letter-spacing: 5;
+}
+
+#previewCommentCount {
+    font-size: 9px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    float: right;
+    margin-right: 3px;
+}
+
+#previewDate {
+    text-align: center;
+    /*border: 1px black solid;*/
+    color: black;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2;
+}
+
+#previewTitle {
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 #postLine {
@@ -328,5 +445,11 @@ p {
 
 #title {
     text-align: center;
+    margin-bottom: 20px;
 }
 
+#username {
+    font-weight: bold;
+    margin-bottom: 15px;
+    vertical-align: middle;
+}
