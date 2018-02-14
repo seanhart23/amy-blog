@@ -27,8 +27,8 @@
         </div>
                     <%if(currentUser){ %>
                             <span id='button'><a href="/posts/<%= blog._id %>/edit" class="ui mini primary button">Edit</a></span>
-                            <span id='button'><form method="POST" action="/posts/<%= blog._id %>?_method=DELETE" id="delete"></form></span>
-                            <button class="ui mini red button">Delete</button>
+                            <span id='button'><form method="POST" action="/posts/<%= blog._id %>?_method=DELETE" id="delete"><button class="ui mini red button">Delete</button></form></span>
+                            
                     <% } %>
                 </div>
             </div>
