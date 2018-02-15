@@ -108,6 +108,26 @@ app.get("/posts/new", middleware.isLoggedIn, function(req, res){
    res.render("new"); 
 });
 
+app.get("/montharchives/january", function(req, res){
+Blog.find({}, function(err, blogs){
+       if(err){
+           console.log(err);
+       } else {
+           res.render("montharchives/january", {blogs: blogs});
+       }
+   });
+});
+
+app.get("/montharchives/february", function(req, res){
+Blog.find({}, function(err, blogs){
+       if(err){
+           console.log(err);
+       } else {
+           res.render("montharchives/february", {blogs: blogs});
+       }
+   });
+});
+
 //CREATE ROUTE
 app.post("/posts", middleware.isLoggedIn, function(req, res){
     Blog.create(req.body.blog, function(err, newBlog){
