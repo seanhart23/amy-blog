@@ -1,9 +1,12 @@
-var Blog       = require('../models/blogpost'),
-    Comment    = require('../models/comment'),
-    middleware = require('../middleware'),
-    express    = require('express'),
-    router     = express.Router();
+var expressSanitizer = require("express-sanitizer"),
+    Blog             = require('../models/blogpost'),
+    Comment          = require('../models/comment'),
+    middleware       = require('../middleware'),
+    express          = require('express'),
+    router           = express.Router();
     
+router.use(expressSanitizer());
+
 router.get("/", function(req, res){
    Blog.find({}, function(err, blogs){
        if(err){
@@ -84,7 +87,6 @@ router.post("/:id/comments", function(req, res){
             console.log(err);
             res.redirect("/posts");
         } else {
-    console.log(req.body.comment);
             Comment.create(req.body.comment, function(err, comment){
                 if(err){
                     console.log(err);

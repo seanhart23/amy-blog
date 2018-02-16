@@ -38,10 +38,6 @@ label {
     font-weight: bold;
 }
 
-p {
-    white-space:pre-wrap;
-}
-
 .aboutImage {
     text-align: center;
     margin-bottom: 50px;
@@ -70,6 +66,7 @@ p {
     padding-top: 5px;
     padding-bottom: 20px;
     min-height: 100px;
+    margin-top: 20px;
 }
 
 .contactForm {
@@ -115,6 +112,10 @@ p {
     background-color: black;
     text-align: center;
     color: white;
+}
+
+.formattedText {
+    white-space:pre-wrap;
 }
 
 .four.wide.column {

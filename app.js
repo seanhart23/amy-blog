@@ -1,5 +1,6 @@
 var Blog             = require('./models/blogpost'),  
     categoryRoutes   = require('./routes/category'),
+    expressSanitizer = require("express-sanitizer"),
     Comment          = require('./models/comment'),
     archiveRoutes    = require('./routes/archive'),
     methodOverride   = require('method-override'),
@@ -33,6 +34,7 @@ app.use(require("express-session")({
     saveUninitialized: false
 }));
 
+app.use(expressSanitizer());
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
