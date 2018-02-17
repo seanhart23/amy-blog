@@ -2,8 +2,9 @@
 
 <div class='ui container'>
     <h2 class='category'>Wellness</h2>
-<div class="ui grid">
-    <div class="twelve wide column">
+<div class="ui stackable mobile grid">
+    <div class="twelve wide column" id='mainContent'>
+        <div class="ui stackable four column grid">
         <% blogs.reverse().forEach(function(blog){ %>
                 <% if(blog.category1 == 'Recipes' || 
                       blog.category2 == 'Recipes' || 
@@ -11,6 +12,7 @@
                       ){ %>
                     <% var date = new Date(blog.created); %>
         <% var options = {month: "long", day: "numeric", year: "numeric"};%>  
+        <div class='column'>    
     <div id='blogTile'>
         <span id='previewDate'><%= date.toLocaleDateString('en-us', options) %></span>
         <h4 class="item" id='previewTitle'>
@@ -25,11 +27,11 @@
         <div class='item' id='previewCommentCount'>
             <%= blog.comments.length %> <% if(blog.comments.length === 1){ %>Comment
                 <% } else { %>Comments<% } %>
-        </div>
+        </div></div>
     </div>
 <% } %>
 <% }) %>
-</div>
-<% include ../partials/rightrail %>
+</div></div>
+<% include ../partials/rightrail %><br>
 </div>
 <% include ../partials/footer %>
