@@ -10,7 +10,7 @@
         <% blogs.slice(-3).reverse().forEach(function(blog){ %>
             <div class='border'>
                 <div class='ui stackable mobile reversed grid'>
-                <div class='eight wide column'> 
+                <div class='nine wide column' id='preview'> 
                     <div class="meta">
                         <% var date = new Date(blog.created); %>
                         <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
@@ -21,18 +21,20 @@
                     </div>
                     <div class="content">
                         <div class="description">
-                            <p class='formattedText'><%- blog.body.substring(0, 400) %>...</p>
+                            <p class='formattedText'><%- blog.body.substring(0, 800) %>...</p>
                         </div>
+                        <div id='postDetail'>
                         <hr id='postLine'>
                         <div class="extra">
                             <span id='category'>Topic: <%= blog.category1 %><% if(blog.category2){ %>, <% }; %><%= blog.category2 %><% if(blog.category3){ %>, <% }; %><%= blog.category3 %></span>
                             <a href="/posts/<%= blog._id %>" id='postLink'>Read More . . .</a>
                         </div>
+                        </div>
                     </div> 
                 </div>
-                <div class='eight wide column'>
+                <div class='seven wide column'>
                     <div id="image">
-                        <img class="ui medium bordered image" src="<%= blog.image %>">
+                        <img class="cover" src="<%= blog.image %>">
                     </div>
                 </div>
             </div>

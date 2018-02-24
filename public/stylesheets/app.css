@@ -119,7 +119,7 @@ label {
 }
 
 .formattedText {
-    white-space:pre-wrap;
+    white-space: pre-wrap;
 }
 
 .four.wide.column {
@@ -214,6 +214,15 @@ label {
 
 .ui.block {
     width: 100%;
+}
+
+.cover {
+    object-fit: cover;
+}
+
+#image img{
+    height: 400px;
+    width: 341px;
 }
 
 .ui.secondary.button {
@@ -363,12 +372,6 @@ label {
     text-decoration: none;
 }
 
-#image {
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
-}
-
 #insta {
     text-align: center;
     padding-bottom: 30px;
@@ -414,6 +417,10 @@ label {
     letter-spacing: 5;
 }
 
+#preview {
+    height: 425px;
+}
+
 #previewCommentCount {
     font-size: 9px;
     text-transform: uppercase;
@@ -438,6 +445,10 @@ label {
     font-family: 'Montserrat', sans-serif;
     margin-top: 5px;
     margin-bottom: 10px;
+}
+
+#postDetail {
+  width: 100%;
 }
 
 #postLine {
