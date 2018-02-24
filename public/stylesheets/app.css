@@ -221,8 +221,12 @@ label {
 }
 
 #image img{
-    height: 400px;
-    width: 341px;
+    height: 435px;
+    width: 360px;
+}
+
+#imageDiv {
+    padding: 4px;
 }
 
 .ui.secondary.button {
@@ -315,6 +319,7 @@ label {
 
 #commentCount {
     margin-bottom: 20px;
+    text-align: left;
 }
 
 #commentDate {
@@ -418,7 +423,7 @@ label {
 }
 
 #preview {
-    height: 425px;
+    height: auto;
 }
 
 #previewCommentCount {
