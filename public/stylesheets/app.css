@@ -63,6 +63,7 @@ label {
 .column {
     text-align: center;
 }
+
 .commentBox {
     height: auto;
     border-top: 1px solid #f3f3f3;
@@ -93,15 +94,24 @@ label {
     letter-spacing: 1px;
     text-align: left;
     -webkit-font-smoothing: antialiased;
+    height: 300px;
+    margin-bottom: 0px;
 }
 
 .description:First-Letter {
     color: rgba(255,182,193, 0.9);
     text-align: left;
     -webkit-font-smoothing: antialiased;
-    font-size: 40px;
+    font-size: 20px;
     padding-right: 5px;
     font-family: 'Parisienne', cursive;
+}
+
+.formattedText {
+    white-space: pre-wrap;
+    width: 100%;
+    margin: 0px;
+    overflow: hidden;
 }
 
 .extra {
@@ -116,10 +126,6 @@ label {
     background-color: black;
     text-align: center;
     color: white;
-}
-
-.formattedText {
-    white-space: pre-wrap;
 }
 
 .four.wide.column {
@@ -140,6 +146,12 @@ label {
 
 .itemIcon:hover {
     color: rgb(255,182,193);
+}
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 16;
+    -webkit-box-orient: vertical; 
 }
 
 .medium.bordered.image {
@@ -171,7 +183,6 @@ label {
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
-
 
 .postItemIcon {
     color: rgba(0, 0, 0, 0.2);   
@@ -218,15 +229,6 @@ label {
 
 .cover {
     object-fit: cover;
-}
-
-#image img{
-    height: 435px;
-    width: 360px;
-}
-
-#imageDiv {
-    padding: 4px;
 }
 
 .ui.secondary.button {
@@ -377,6 +379,15 @@ label {
     text-decoration: none;
 }
 
+#image img{
+    height: 435px;
+    width: 360px;
+}
+
+#imageDiv {
+    padding: 4px;
+}
+
 #insta {
     text-align: center;
     padding-bottom: 30px;
@@ -423,7 +434,7 @@ label {
 }
 
 #preview {
-    height: auto;
+    height: 435px;
 }
 
 #previewCommentCount {
@@ -453,11 +464,11 @@ label {
 }
 
 #postDetail {
-  width: 100%;
+    width: 100%;
 }
 
 #postLine {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 #postLink {
@@ -481,4 +492,19 @@ label {
     font-weight: bold;
     margin-bottom: 15px;
     vertical-align: middle;
+}
+
+@media (max-width: 980px) { 
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 11;
+    -webkit-box-orient: vertical;
+    width: 100%;
+    }
+.description {
+    height: 225px;
+    }
+#preview {
+    height: 400px;
+}
 }
