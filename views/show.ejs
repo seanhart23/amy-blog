@@ -16,8 +16,8 @@
         <div class="ui top attached">
             <div class="item">
                 <img class="ui fluid image" src="<%= blog.image %>" width="300px">
-                <div class="description" id='blogBody'>
-                    <p class='formattedText'><%- blog.body %></p>
+                <div class="description1" id='blogBody'>
+                    <p class='formattedText' id='blogPost'><%- blog.body %></p>
                     <div class='postFooter'>
                 <span>Topic: <%= blog.category1 %><% if(blog.category2){ %>, <% }; %><%= blog.category2 %><% if(blog.category3){ %>, <% }; %><%= blog.category3 %><div class='shareButtons'>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://limitless-caverns-66212.herokuapp.com/posts/<%= blog._id %>" target='_blank' title='Share on Facebook' src=sdkpreparse><i class="fab fa-facebook-square postItemIcon"></i></a>

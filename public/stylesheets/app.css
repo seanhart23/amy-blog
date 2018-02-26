@@ -98,6 +98,15 @@ label {
     margin-bottom: 0px;
 }
 
+.description1 {
+    color: #797977;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 10px;
+}
+
 .description:First-Letter {
     color: rgba(255,182,193, 0.9);
     text-align: left;
@@ -105,6 +114,16 @@ label {
     font-size: 20px;
     padding-right: 5px;
     font-family: 'Parisienne', cursive;
+}
+
+.description1:First-Letter {
+    color: rgba(255,182,193, 0.9);
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    font-size: 40px;
+    padding-right: 5px;
+    font-family: 'Parisienne', cursive;
+    overflow: visible;
 }
 
 .formattedText {
@@ -182,6 +201,7 @@ label {
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .postItemIcon {
@@ -260,7 +280,7 @@ label {
 }
 
 #blogBody {
-    padding-top: 25px;
+    margin-top: 25px;
     padding-bottom: 40px;
 }
 
@@ -282,6 +302,11 @@ label {
     color: black;
     border-radius: 0;
     -webkit-font-smoothing: antialiased;
+}
+
+#blogPost {
+    height: auto;
+    overflow: visible;
 }
 
 #blogTileImage {
