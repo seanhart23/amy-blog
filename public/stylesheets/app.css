@@ -156,6 +156,11 @@ label {
     color: silver;
 }
 
+.imageFrame {
+    width: 100%;
+    text-align: center;
+}
+
 .itemIcon {
     color: #f3f3f3;   
     text-decoration: none;
