@@ -5,8 +5,6 @@ var expressSanitizer = require("express-sanitizer"),
     express          = require('express'),
     router           = express.Router();
     
-router.use(expressSanitizer());
-
 router.get("/", function(req, res){
    Blog.find({}, function(err, blogs){
        if(err){
