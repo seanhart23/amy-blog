@@ -44,8 +44,9 @@ label {
 }
 
 .border {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     padding: 10px;
+    background-color: rgb(255,250,250);
 }
 
 .bottom {
@@ -89,13 +90,14 @@ label {
 }
 
 .description {
-    color: #797977;
+    color: #505050;
     line-height: 1;
     letter-spacing: 1px;
     text-align: left;
     -webkit-font-smoothing: antialiased;
     height: 300px;
     margin-bottom: 0px;
+    font-weight: 100;
 }
 
 .description1 {
@@ -156,9 +158,16 @@ label {
     color: silver;
 }
 
+.imageCaption {
+    font-size: 12px;
+    font-style: italic;
+}
+
 .imageFrame {
-    display: block;
-    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .itemIcon {
@@ -319,6 +328,7 @@ label {
     width: auto;
     margin-right: auto;
     margin-left: auto;
+    object-fit: cover;
 }
 
 #button {
@@ -491,6 +501,7 @@ label {
     font-family: 'Montserrat', sans-serif;
     margin-top: 5px;
     margin-bottom: 10px;
+    height: 40px;
 }
 
 #postDetail {
