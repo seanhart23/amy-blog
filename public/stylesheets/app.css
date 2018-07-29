@@ -27,8 +27,7 @@ hr {
     margin: 0px;
 }
 
-
-img.ui.small.image {
+.img.ui.small.image {
     display: inline-block;
     height: 187px;
     width: auto;
@@ -196,6 +195,10 @@ label {
 .meta {
     text-align: center;
     margin: 5px;
+}
+
+.navbar {
+    border-radius: 0px;
 }
 
 .old {
@@ -441,20 +444,24 @@ label {
 }
 
 #link {
-    color: black;
+    color: white;
     text-transform: uppercase;
     font-size: 13px;
     -webkit-font-smoothing: antialiased;
 }
 
-#link:hover {
+#link:after {
+    display:block;
+    content: '';
+    border-bottom: solid 1px rgb(255,182,193);
     color: rgb(255,182,193);
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
 }
 
-#link.active.item {
-    text-decoration: none;
-    color: rgb(255,182,193);
-    border-bottom: 1px solid black;
+#link:hover:after {
+    transform: scaleX(1);
+    color: rgb(255,182,193)
 }
 
 #mainContent {

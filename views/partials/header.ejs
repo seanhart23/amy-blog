@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Hart to Hearts</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
         <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
         <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|Dawning+of+a+New+Day|Homemade+Apple|Kristi|Mr+De+Haviland|Parisienne|Montserrat" rel="stylesheet">
@@ -21,22 +22,35 @@
             fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="ui mobile stackable secondary pointing menu" id='nav'>
-    <div class='ui container'>
-        <a href='/posts' class="item" id='link'>Home</a>
-        <a href='/about' class="item" id='link'>About</a>
-        <a href='/categories/motherhood' class="item" id='link'>Motherhood</a>
-        <a href='/categories/interiorstyle' class="item" id='link'>Interior Style</a>
-        <a href='/categories/wellness' class="item" id='link'>Wellness</a>
-        <a href='/contact' class="item" id='link'>Contact</a>
-        <div class="right menu">
-            <a class='item icon' id='link' href='https://www.instagram.com/hart_to_hearts/?hl=en' target=_blank><i class="fab fa-instagram itemIcon"></i></a>
-            <a class='item icon' id='link' href='https://www.pinterest.com/hart_to_hearts/' target=_blank><i class="fab fa-pinterest itemIcon"></i></a>
-            <a class='item icon' id='link' href='https://www.bloglovin.com/blogs/hart-to-hearts-11975363' target=_blank><i class="fas fa-plus itemIcon"></i></a>
-            <!--<a class='item icon' id='link'><i class="fas fa-search itemIcon"></i></a>-->
-        </div>
+<nav class="navbar navbar-inverse bg-success">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-</div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href='/posts' class="item" id='link'>Home</a></li>
+        <li><a href='/about' class="item" id='link'>About</a></li>
+        <li><a href='/categories/motherhood' class="item" id='link'>Motherhood</a></li>
+        <li><a href='/categories/interiorstyle' class="item" id='link'>Interior Style</a></li>
+        <li><a href='/categories/wellness' class="item" id='link'>Wellness</a></li>
+        <li><a href='/contact' class="item" id='link'>Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+            <li><a class='item icon' id='link' href='https://www.instagram.com/hart_to_hearts/?hl=en' target=_blank><i class="fab fa-instagram itemIcon"></i></a></li>
+            <li><a class='item icon' id='link' href='https://www.pinterest.com/hart_to_hearts/' target=_blank><i class="fab fa-pinterest itemIcon"></i></a></li>
+            <li><a class='item icon' id='link' href='https://www.bloglovin.com/blogs/hart-to-hearts-11975363' target=_blank><i class="fas fa-plus itemIcon"></i></a></li>
+            <li><!--<a class='item icon' id='link'><i class="fas fa-search itemIcon"></i></a>-->
+        </ul>
+    </div>
+  </div>
+</nav>
+
 
     <h1>Hart &nbsp;to Hearts</h1>
 
