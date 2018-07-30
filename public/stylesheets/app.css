@@ -9,6 +9,8 @@ h1 {
     padding-top: 30px;
     padding-bottom: 20px;
     letter-spacing: 4;
+    display: block;
+    margin-top: 40px;
 }
 
 h2 {
@@ -27,7 +29,7 @@ hr {
     margin: 0px;
 }
 
-.img.ui.small.image {
+img.ui.small.image {
     display: inline-block;
     height: 187px;
     width: auto;
@@ -71,6 +73,7 @@ label {
     padding-bottom: 20px;
     min-height: 100px;
     margin-top: 20px;
+    text-align: left;
 }
 
 .contactForm {
@@ -89,7 +92,7 @@ label {
 }
 
 .description {
-    color: #505050;
+    color: black;
     line-height: 1;
     letter-spacing: 1px;
     text-align: left;
@@ -97,6 +100,7 @@ label {
     height: 300px;
     margin-bottom: 0px;
     font-weight: 100;
+    font-size: 12px;
 }
 
 .description1 {
@@ -132,6 +136,9 @@ label {
     width: 100%;
     margin: 0px;
     overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    color: black;
 }
 
 .extra {
@@ -199,6 +206,14 @@ label {
 
 .navbar {
     border-radius: 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 20px;
+    /*box-shadow: 0px 1px 2px rgb(255,182,193);*/
+    background-color: rgb(255,182,193);
+    border: none;
 }
 
 .old {
@@ -393,7 +408,7 @@ label {
 
 #date {
     text-align: center;
-    border: 1px black solid;
+    /*border: 1px black solid;*/
     color: black;
     text-transform: uppercase;
     padding: 3px 10px;
@@ -453,7 +468,7 @@ label {
 #link:after {
     display:block;
     content: '';
-    border-bottom: solid 1px rgb(255,182,193);
+    border-bottom: solid 1px black;
     color: rgb(255,182,193);
     transform: scaleX(0);  
     transition: transform 250ms ease-in-out;
@@ -540,9 +555,21 @@ label {
     font-weight: bold;
     margin-bottom: 15px;
     vertical-align: middle;
+    text-align: left;
 }
 
-@media (max-width: 980px) { 
+/*MOBILE SETTINGS*/
+
+@media screen and (max-width: 980px) {
+
+img {
+    width: 80%;
+}
+
+#image img {
+    width: 100%;
+}
+
 .line-clamp {
     display: -webkit-box;
     -webkit-line-clamp: 11;
