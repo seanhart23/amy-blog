@@ -184,7 +184,7 @@ label {
 }
 
 .itemIcon:hover {
-    color: rgb(255,182,193);
+    color: black;
 }
 
 .line-clamp {
@@ -211,9 +211,21 @@ label {
     width: 100%;
     z-index: 1;
     margin-bottom: 20px;
-    /*box-shadow: 0px 1px 2px rgb(255,182,193);*/
+    box-shadow: 0px 1px 1px rgb(255,182,193);
     background-color: rgb(255,182,193);
     border: none;
+}
+
+.navbar-inverse .navbar-toggle {
+     border-color: white; 
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: rgb(255,182,193);
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: white;
 }
 
 .old {
