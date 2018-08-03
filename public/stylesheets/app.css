@@ -7,7 +7,7 @@ h1 {
     margin-bottom: 0px;
     line-height: 1.1em;
     padding-top: 30px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     letter-spacing: 4;
     display: block;
     margin-top: 40px;
@@ -85,6 +85,10 @@ label {
 
 .container.main {
     margin-top: 7.0em;
+}
+
+.cover {
+    object-fit: cover;
 }
 
 .delete-form {
@@ -193,6 +197,51 @@ label {
     -webkit-box-orient: vertical; 
 }
 
+.mainImage {
+    object-fit: cover;
+    display: inline-block;
+    float: left;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.mainImageDate {
+    transform: translate(-50%, -50%);
+    width: 100%;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    padding: 3px 5px;
+    font-size: 10px;
+    letter-spacing: 2;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.mainImageCaption {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    Height: 15%;
+    width: 100%;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 5px;
+    font-weight: 800;
+    opacity: 0.9;
+    margin: auto auto;
+}
+
+.mainImageTitle {
+    font-weight: 800;
+    opacity: 2;
+}
 .medium.bordered.image {
     margin-left: auto;
     margin-right: auto;
@@ -262,6 +311,10 @@ label {
     color: rgb(255,182,193);
 }
 
+.row {
+    margin-bottom: 40px;
+}
+
 .secondary.pointing.menu{
     background-color: transparent;
     color: black;
@@ -289,10 +342,6 @@ label {
 
 .ui.block {
     width: 100%;
-}
-
-.cover {
-    object-fit: cover;
 }
 
 .ui.secondary.button {
@@ -367,6 +416,10 @@ label {
     font-size: 12px;
 }
 
+#carousel {
+    height: 435px;
+    margin-bottom: 50px;
+}
 #category {
     text-transform: uppercase;
     position: absolute;
@@ -456,6 +509,15 @@ label {
 
 #imageDiv {
     padding: 4px;
+}
+
+#imageHeader {
+    height: auto;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #insta {
@@ -554,6 +616,18 @@ label {
     font-size: 11px;
 }
 
+#slideshow > div {
+  position: absolute;
+}
+
+#slideshow1 > div {
+  position: absolute;
+}
+
+#slideshow2 > div {
+  position: absolute;
+}
+
 #social {
     text-align: center;
 }
@@ -591,7 +665,13 @@ img {
 .description {
     height: 225px;
     }
+
+#carousel {
+    display: none;
+}
+
 #preview {
     height: 400px;
 }
 }
+
