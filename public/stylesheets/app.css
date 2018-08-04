@@ -18,7 +18,7 @@ h2 {
     text-transform: uppercase;
     padding: 5px 0px;
     letter-spacing: 3px;
-    font-size: 24px;
+    font-size: 20px;
     color: black;
 }
 
@@ -230,9 +230,9 @@ label {
     font-family: 'Montserrat', sans-serif;
     vertical-align: middle;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     padding-top: 10px;
-    font-weight: 800;
+    font-weight: bolder;
     opacity: 0.9;
     margin: auto auto;
 }

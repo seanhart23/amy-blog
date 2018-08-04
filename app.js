@@ -24,7 +24,8 @@ var Blog             = require('./models/blogpost'),
 //==================================
 
 // mongoose.connect("mongodb://localhost/amy_blog");
-mongoose.connect(process.env.DATABASEURL);    
+mongoose.connect('mongodb://amyhart23:maem2501@ds231588.mlab.com:31588/hart_to_hearts');
+// mongoose.connect(process.env.DATABASEURL);    
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
