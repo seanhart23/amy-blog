@@ -52,4 +52,14 @@ Blog.find({}, function(err, blogs){
    });
 });
 
+router.get("/october17", function(req, res){
+Blog.find({}, function(err, blogs){
+       if(err){
+           console.log(err);
+       } else {
+           res.render("montharchives/october17", {blogs: blogs});
+       }
+   });
+});
+
 module.exports = router;
