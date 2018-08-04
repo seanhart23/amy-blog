@@ -1,14 +1,14 @@
 <% include ../partials/header %>
 
 <div class='ui container'>
-    <h2 class='category'>February 2018</h2>
+    <h2 class='category'>March 2017</h2>
 <div class="ui stackable mobile grid">
     <div class="twelve wide column">
         <div class="ui stackable four column grid">
         <% blogs.reverse().forEach(function(blog){ %>
         <% var date = new Date(blog.created); %>
         <% var options = {month: "long", day: "numeric", year: "numeric"};%> 
-        <% if (date.getMonth() === 0){ %> 
+        <% if ((date.getMonth() === 02) && (date.getFullYear() === 2017)){ %> 
     <div class='column'>
     <div id='blogTile'>
         <span id='previewDate'><%= date.toLocaleDateString('en-us', options) %></span>
