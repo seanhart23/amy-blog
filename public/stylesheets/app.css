@@ -240,7 +240,9 @@ label {
 
 .mainImageTitle {
     font-weight: 800;
-    opacity: 2;
+    opacity: 1;
+    text-decoration: none;
+    color: black;
 }
 .medium.bordered.image {
     margin-left: auto;

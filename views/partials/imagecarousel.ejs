@@ -4,13 +4,14 @@
                 <div id="slideshow">
                     <% blogs.slice().reverse().forEach(function(blog){ %>
                     <div>
+                        <a href="/posts/<%= blog._id %>">
                         <img class='cover mainImage' src="<%= blog.image %>">
                         <span class='mainImageCaption'>
                             <% var date = new Date(blog.created); %>
                             <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
                             <span class='mainImageDate'><%= date.toLocaleDateString('en-us', options) %></span>
                             <p class='mainImageTitle'><%= blog.title %></p>
-                        </span>
+                        </span></a>
                     </div>
                     <% }) %>
                 </div>
@@ -19,13 +20,14 @@
                 <div id="slideshow1">
                     <% blogs.slice().forEach(function(blog){ %>
                     <div>
+                        <a href="/posts/<%= blog._id %>">
                         <img class='cover mainImage' src="<%= blog.image %>">
                         <span class='mainImageCaption'>
                             <% var date = new Date(blog.created); %>
                             <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
                             <span class='mainImageDate'><%= date.toLocaleDateString('en-us', options) %></span>
                             <p class='mainImageTitle'><%= blog.title %></p>
-                        </span>
+                        </span></a>
                     </div>
                     <% }) %>
                 </div>
@@ -34,13 +36,14 @@
                 <div id="slideshow2">
                     <% blogs.slice(-4).forEach(function(blog){ %>
                     <div>
+                        <a href="/posts/<%= blog._id %>">
                         <img class='cover mainImage' src="<%= blog.image %>">
                         <span class='mainImageCaption'>
                             <% var date = new Date(blog.created); %>
                             <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
                             <span class='mainImageDate'><%= date.toLocaleDateString('en-us', options) %></span>
                             <p class='mainImageTitle'><%= blog.title %></p>
-                        </span>
+                        </span></a>
                     </div>
                     <% }) %>    
                 </div>

@@ -5,7 +5,7 @@
     <div class="ui stackable mobile grid">
         <div class="twelve wide column">
             <div class="ui stackable four column grid">
-                <% blogs.reverse().forEach(function(blog){ %>
+                <% blogs.sort(blogs.created).reverse().forEach(function(blog){ %>
                     <% var date = new Date(blog.created); %>
                     <% var date = new Date(blog.created); %>
                     <% var options = {month: "long", day: "numeric", year: "numeric"};%>  
