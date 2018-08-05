@@ -6,24 +6,9 @@
     <div class="twelve wide column" id='mainContent'>
         <div class="ui stackable four column grid">
         <% blogs.reverse().forEach(function(blog){ %>
-                <% if(blog.category1 == 'Pregnancy' || 
-                      blog.category1 == 'Littles' || 
-                      blog.category1 == 'Mama Things' || 
-                      blog.category1 == 'Baby Things' || 
-                      blog.category1 == 'Kid Things' ||
-                      blog.category1 == "Jolie's Journey" || 
-                      blog.category2 == 'Pregnancy' || 
-                      blog.category2 == 'Littles' || 
-                      blog.category2 == 'Mama Things' || 
-                      blog.category2 == 'Baby Things' ||
-                      blog.category2 == 'Kid Things' || 
-                      blog.category2 == "Jolie's Journey" || 
-                      blog.category3 == 'Pregnancy' || 
-                      blog.category3 == 'Littles' || 
-                      blog.category3 == 'Mama Things' ||
-                      blog.category3 == 'Baby Things' || 
-                      blog.category3 == 'Kid Things' || 
-                      blog.category3 == "Jolie's Journey"
+                <% if(blog.category1 == 'Motherhood' || 
+                      blog.category2 == 'Motherhood' || 
+                      blog.category3 == 'Motherhood' 
                       ){ %>
     <% var date = new Date(blog.created); %>
         <% var options = {month: "long", day: "numeric", year: "numeric"};%> 

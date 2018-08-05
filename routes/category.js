@@ -32,6 +32,16 @@ router.get('/wellness', function(req, res){
    });
 });
 
+router.get('/life', function(req, res){
+       Blog.find({}, function(err, blogs){
+       if(err){
+           console.log(err);
+       } else {
+           res.render("categories/life", {blogs: blogs});
+       }
+   });
+});
+
 router.get('/archive', function(req, res){
     Blog.find({}, function(err, blogs){
    if(err){

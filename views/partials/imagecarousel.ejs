@@ -2,23 +2,23 @@
     <div class="row">
             <div class='col-md-4' id='image'> 
                 <div id="slideshow">
-                    <% blogs.slice().reverse().forEach(function(blog){ %>
+                    <% blogs.slice(3,5).forEach(function(blog){ %>
                     <div>
                         <a href="/posts/<%= blog._id %>">
                         <img class='cover mainImage img-responsive' src="<%= blog.image %>">
                         <span class='mainImageCaption'>
-                            <% var date = new Date(blog.created); %>
-                            <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
-                            <span class='mainImageDate'><%= date.toLocaleDateString('en-us', options) %></span>
-                            <p class='mainImageTitle'><%= blog.title %></p>
-                        </span></a>
+                                <% var date = new Date(blog.created); %>
+                                <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
+                                <span class='mainImageDate'><%= date.toLocaleDateString('en-us', options) %></span>
+                                <p class='mainImageTitle'><%= blog.title %></p></a>
+                        </span>
                     </div>
                     <% }) %>
                 </div>
             </div>
             <div class='col-md-4' id='image'> 
                 <div id="slideshow1">
-                    <% blogs.slice().forEach(function(blog){ %>
+                    <% blogs.slice(6,8).forEach(function(blog){ %>
                     <div>
                         <a href="/posts/<%= blog._id %>">
                         <img class='cover mainImage img-responsive' src="<%= blog.image %>">
@@ -34,7 +34,7 @@
             </div>
             <div class='col-md-4' id='image'> 
                 <div id="slideshow2">
-                    <% blogs.slice(-4).forEach(function(blog){ %>
+                    <% blogs.slice(0,2).forEach(function(blog){ %>
                     <div>
                         <a href="/posts/<%= blog._id %>">
                         <img class='cover mainImage img-responsive' src="<%= blog.image %>">

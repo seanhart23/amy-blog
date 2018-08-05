@@ -1,14 +1,14 @@
 <% include ../partials/header %>
 
 <div class='ui container'>
-    <h2 class='category'>Wellness</h2>
+    <h2 class='category'>Life</h2>
 <div class="ui stackable mobile grid">
     <div class="twelve wide column" id='mainContent'>
         <div class="ui stackable four column grid">
         <% blogs.reverse().forEach(function(blog){ %>
-                <% if(blog.category1 == 'Wellness' || 
-                      blog.category2 == 'Wellness' || 
-                      blog.category3 == 'Wellness'
+                <% if(blog.category1 == 'Life' || 
+                      blog.category2 == 'Life' || 
+                      blog.category3 == 'Life'
                       ){ %>
                     <% var date = new Date(blog.created); %>
         <% var options = {month: "long", day: "numeric", year: "numeric"};%>  

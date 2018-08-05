@@ -8,7 +8,7 @@
         <% blogs.reverse().forEach(function(blog){ %>
         <% var date = new Date(blog.created); %>
         <% var options = {month: "long", day: "numeric", year: "numeric"};%> 
-        <% if ((date.getMonth() === 10) && (date.getFullYear() === 2017)){ %> 
+        <% if ((date.getMonth() === 09) && (date.getFullYear() === 2017)){ %> 
     <div class='column'>
     <div id='blogTile'>
         <span id='previewDate'><%= date.toLocaleDateString('en-us', options) %></span>
