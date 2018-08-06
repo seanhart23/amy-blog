@@ -15,6 +15,16 @@ router.get("/", function(req, res){
   });
 });
 
+router.get("/partials/carousel", function(req, res){
+     Blog.find({}, function(err, blogs){
+      if(err){
+          console.log(err);
+      } else {
+          res.render("partials/imagecarousel", {blogs: blogs});
+      }
+  });
+});
+
 // router.get('/register', function(req, res){
 //     res.render('register');
 // });

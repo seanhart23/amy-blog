@@ -1,51 +1,54 @@
+<!--<button class="w3-button w3-display-left" id='test' onclick="test">&#10094;</button>-->
+
 <div class='container' id='carousel'>
     <div class="row">
             <div class='col-md-4' id='image'> 
                 <div id="slideshow">
-                    <% blogs.slice(3,5).forEach(function(blog){ %>
+                    <% for (let q=blogs.length - 1; q >= 0; q--){ %>
                     <div>
-                        <a href="/posts/<%= blog._id %>">
-                        <img class='cover mainImage img-responsive' src="<%= blog.image %>">
-                        <span class='mainImageCaption'>
-                                <% var date = new Date(blog.created); %>
-                                <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
-                                <span class='mainImageDate'><%= date.toLocaleDateString('en-us', options) %></span>
-                                <p class='mainImageTitle'><%= blog.title %></p></a>
-                        </span>
+                        <a href="/posts/<%= blogs[q]._id %>">
+                        <img class='cover mainImage1 img-responsive' src="<%= blogs[q].image %>">
+                        <span class='mainImageCaption1'>
+                            <% var date = new Date(blogs[q].created); %>
+                            <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
+                            <span class='mainImageDate'><%= date.toLocaleDateString('en-us', options) %></span>
+                            <p class='mainImageTitle'><%= blogs[q].title %></p>
+                        </span></a>
                     </div>
-                    <% }) %>
+                    <% } %>
                 </div>
             </div>
             <div class='col-md-4' id='image'> 
                 <div id="slideshow1">
-                    <% blogs.slice(6,8).forEach(function(blog){ %>
+                    <% for (let y=blogs.length - 2; y >= 0; y--){ %>
                     <div>
-                        <a href="/posts/<%= blog._id %>">
-                        <img class='cover mainImage img-responsive' src="<%= blog.image %>">
-                        <span class='mainImageCaption'>
-                            <% var date = new Date(blog.created); %>
+                        <a href="/posts/<%= blogs[y]._id %>">
+                        <img class='cover mainImage1 img-responsive' src="<%= blogs[y].image %>">
+                        <span class='mainImageCaption1'>
+                            <% var date = new Date(blogs[y].created); %>
                             <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
                             <span class='mainImageDate'><%= date.toLocaleDateString('en-us', options) %></span>
-                            <p class='mainImageTitle'><%= blog.title %></p>
+                            <p class='mainImageTitle'><%= blogs[y].title %></p>
                         </span></a>
                     </div>
-                    <% }) %>
+                    <% } %>
                 </div>
             </div>
             <div class='col-md-4' id='image'> 
                 <div id="slideshow2">
-                    <% blogs.slice(0,2).forEach(function(blog){ %>
+                    <% for (var z=blogs.length - 3; z >= 0; z--){ %>
                     <div>
-                        <a href="/posts/<%= blog._id %>">
-                        <img class='cover mainImage img-responsive' src="<%= blog.image %>">
-                        <span class='mainImageCaption'>
-                            <% var date = new Date(blog.created); %>
+                        <a href="/posts/<%= blogs[z]._id %>">
+                        <img class='cover mainImage2 img-responsive' src="<%= blogs[z].image %>">
+                        <span class='mainImageCaption2'>
+                            <% var date = new Date(blogs[z].created); %>
                             <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
                             <span class='mainImageDate'><%= date.toLocaleDateString('en-us', options) %></span>
-                            <p class='mainImageTitle'><%= blog.title %></p>
+                            <p class='mainImageTitle'><%= blogs[z].title %></p>
                         </span></a>
                     </div>
-                    <% }) %>    
+                    <% } %> 
+                    <button class="w3-button w3-display-right" id='rightArrow'>&#10095;</button>
                 </div>
             </div>
         </div>

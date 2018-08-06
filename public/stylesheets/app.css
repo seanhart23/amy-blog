@@ -1,6 +1,6 @@
 h1 {
     font-family: 'Mr De Haviland', cursive;
-    font-size: 125px;
+    font-size: 120px;
     font-weight: 100;
     text-align: center;
     color: black;
@@ -11,7 +11,7 @@ h1 {
     letter-spacing: 4;
     display: block;
     margin-top: 40px;
-    z-index: 2;
+    z-index: 1;
 }
 
 h2 {
@@ -223,6 +223,46 @@ label {
 }
 
 .mainImageCaption {
+    position: absolute;
+    bottom: -15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    Height: 15%;
+    width: 80%;
+    background-color: rgb(255,182,193);
+    font-family: 'Montserrat', sans-serif;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 10px;
+    font-weight: bolder;
+    opacity: 0.9;
+    margin: auto auto;
+    outline: 1px solid white;
+    outline-offset: -7px;
+}
+
+.mainImageCaption1 {
+    position: absolute;
+    bottom: -15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    Height: 15%;
+    width: 80%;
+    background-color: rgb(255,182,193);
+    font-family: 'Montserrat', sans-serif;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 10px;
+    font-weight: bolder;
+    opacity: 0.9;
+    margin: auto auto;
+    outline: 1px solid white;
+    outline-offset: -7px;
+}
+
+.mainImageCaption2 {
     position: absolute;
     bottom: -15%;
     left: 50%;
@@ -641,6 +681,18 @@ label {
     font-size: 11px;
 }
 
+#rightArrow {
+    margin-top: 50%;
+    right: -2%;
+    background-color: rgb(255,182,193);
+    z-index: 1;
+}
+
+#rightArrow:hover {
+    margin-top: 50%;
+    background-color: black;
+}
+
 #slideshow > div {
   position: absolute;
 }
@@ -669,6 +721,9 @@ label {
     text-align: left;
 }
 
+#test {
+    top: 60%;
+}
 /*MOBILE SETTINGS*/
 
 @media screen and (max-width: 980px) {
