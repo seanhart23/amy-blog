@@ -48,9 +48,11 @@
         </div>
         <div class="field">
             <label>Blog Content</label>
-            <textarea name="blog[body]" rows='30'><%= blog.body %></textarea>
+            <textarea name="blog[body]" rows='30' id='textAreaEdit'><%= blog.body %></textarea>
         </div>
         <input type="submit" class="ui green inverted button">
+        <input type="button" class="ui blue inverted button add" value="Add Image" onclick="addtxtedit('textAreaEdit')">
+        <input type="button" class="ui purple inverted button edit" value="Add Signature" onclick="addsigedit('textAreaEdit')">
     </form>
 </div>
 

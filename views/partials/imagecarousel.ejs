@@ -3,8 +3,9 @@
 <div class='container' id='carousel'>
     <div class="row">
             <div class='col-md-4' id='image'> 
+            <% var h = blogs.sort(blogs.created) %>
                 <div id="slideshow">
-                    <% for (let q=blogs.length - 1; q >= 0; q--){ %>
+                    <% for (let q=h.length - 1; q >= 0; q--){ %>
                     <div>
                         <a href="/posts/<%= blogs[q]._id %>">
                         <img class='cover mainImage1 img-responsive' src="<%= blogs[q].image %>">
@@ -20,7 +21,7 @@
             </div>
             <div class='col-md-4' id='image'> 
                 <div id="slideshow1">
-                    <% for (let y=blogs.length - 2; y >= 0; y--){ %>
+                    <% for (let y=h.length - 2; y >= 0; y--){ %>
                     <div>
                         <a href="/posts/<%= blogs[y]._id %>">
                         <img class='cover mainImage1 img-responsive' src="<%= blogs[y].image %>">
@@ -36,7 +37,7 @@
             </div>
             <div class='col-md-4' id='image'> 
                 <div id="slideshow2">
-                    <% for (var z=blogs.length - 3; z >= 0; z--){ %>
+                    <% for (var z=h.length - 3; z >= 0; z--){ %>
                     <div>
                         <a href="/posts/<%= blogs[z]._id %>">
                         <img class='cover mainImage2 img-responsive' src="<%= blogs[z].image %>">

@@ -1,5 +1,9 @@
 <% include ./partials/header %>
 
+<script>
+
+</script>
+
 <div class="ui main text container segment">
     <div class="ui huge header">New Blog Post</div>
     <form class="ui form" action="/posts" method="POST">
@@ -45,10 +49,11 @@
         </div>
         <div class="field">
             <label>Blog Content</label>
-            <textarea name="blog[body]" rows='30'></textarea>
+            <textarea name="blog[body]" rows='30' id='textAreaNew'></textarea>
         </div>
         <input type="submit" class="ui green inverted button">
-    </form>
+        <input type="button" class="ui blue inverted button add" value="Add Image" onclick="addtxt('textAreaNew')">
+        <input type="button" class="ui purple inverted button edit" value="Add Signature" onclick="addsig('textAreaNew')">
 </div>
 
 <% include ./partials/footer %>
