@@ -1,6 +1,13 @@
 body {
+    overflow: visible;
     -webkit-overflow-scrolling: touch;
 }
+
+.main {
+  margin-top: 50px;
+  overflow-y: scroll;
+}
+
 
 h1 {
     font-family: 'Mr De Haviland', cursive;

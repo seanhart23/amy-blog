@@ -81,3 +81,13 @@ $(".add").mouseup(function(){
 $(".edit").mouseup(function(){
     $(this).blur();
 })
+
+var height = $(window).height() - 50;
+
+$(".main").height(height);
+
+window.onresize = function(event) {
+var height = $(window).height() - 50;
+
+$(".main").height(height);
+};
