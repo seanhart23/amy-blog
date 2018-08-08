@@ -4,7 +4,7 @@
             <div class='col-md-4' id='image'> 
             <% var blogInOrder = blogs.sort(blogs.created) %>
                 <div id="slideshow">
-                    <% for (let q=blogInOrder.length - 1; q >= 0; q--){ %>
+                    <% for (let q=blogInOrder.length; q >= 0; q--){ %>
                     <div>
                         <a href="/posts/<%= blogs[q]._id %>">
                         <img class='cover mainImage1 img-responsive' src="<%= blogs[q].image %>">
