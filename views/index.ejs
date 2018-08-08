@@ -8,7 +8,7 @@
     
 <div class="ui stackable mobile grid">
     <div class="twelve wide column">
-        <% blogs.sort().slice(-3).reverse().forEach(function(blog){ %>
+        <% blogs.sort().slice(-3).reverse(blogs.created).forEach(function(blog){ %>
             <div class='border'>
                 <div class='ui stackable mobile reversed grid'>
                 <div class='nine wide column' id='preview'> 
