@@ -2,24 +2,24 @@
 <div class='container' id='carousel'>
     <div class="row">
             <div class='col-md-4' id='image'> 
-            <% var blogInOrder = blogs.sort(1) %>
                 <div id="slideshow">
-                    <% for (var q = blogInOrder.length - 1; q >= 0; q--){ %>
-                    <div><%= console.log(blogInOrder[q].title) %>
-                        <a href="/posts/<%= blogs[q]._id %>">
-                        <img class='cover mainImage1 img-responsive' src="<%= blogs[q].image %>">
+                <% blogs.sort(blogs.created).reverse().forEach(function(blog){ %>
+                    <div>
+                        <a href="/posts/<%= blog._id %>">
+                        <img class='cover mainImage1 img-responsive' src="<%= blog.image %>">
                         <span class='mainImageCaption1'>
-                            <% var date = new Date(blogs[q].created); %>
+                            <% var date = new Date(blog.created); %>
                             <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
                             <span class='mainImageDate'><%= date.toLocaleDateString('en-us', options) %></span>
-                            <p class='mainImageTitle'><%= blogs[q].title %></p>
+                            <p class='mainImageTitle'><%= blog.title %></p>
                         </span></a>
                     </div>
-                    <% } %>
+                    <% }) %>
                 </div>
             </div>
             <div class='col-md-4' id='image'> 
                 <div id="slideshow1">
+                    <% var blogInOrder = blogs.sort() %>
                     <% for (let y=blogInOrder.length - 2; y >= 0; y--){ %>
                     <div>
                         <a href="/posts/<%= blogs[y]._id %>">
@@ -36,8 +36,9 @@
             </div>
             <div class='col-md-4' id='image'> 
                 <div id="slideshow2">
+                    <% var blogInOrder = blogs.sort() %>
                     <% for (var z=blogInOrder.length - 3; z >= 0; z--){ %>
-                    <div>
+                    <div>            
                         <a href="/posts/<%= blogs[z]._id %>">
                         <img class='cover mainImage2 img-responsive' src="<%= blogs[z].image %>">
                         <span class='mainImageCaption2'>
