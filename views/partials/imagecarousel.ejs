@@ -3,7 +3,7 @@
     <div class="row">
             <div class='col-md-4' id='image'> 
                 <div id="slideshow">
-                <% blogs.sort().reverse().forEach(function(blog){ %>
+                <% blogs.sort(blogs).reverse().forEach(function(blog){ %>
                     <div>
                         <a href="/posts/<%= blog._id %>">
                         <img class='cover mainImage1 img-responsive' src="<%= blog.image %>">
