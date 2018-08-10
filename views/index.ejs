@@ -27,7 +27,7 @@
                         <div id='postDetail'>
                         <hr id='postLine'>
                         <div class="extra">
-                            <span id='category'>Topic: <%= blog.category1 %><% if(blog.category2){ %>, <% }; %><%= blog.category2 %><% if(blogs[e].category3){ %>, <% }; %></span>
+                            <span id='category'>Topic: <%= blog.category1 %><% if(blog.category2){ %>, <% }; %><%= blog.category2 %><% if(blog.category3){ %>, <% }; %></span>
                             <a href="/posts/<%= blog._id %>" id='postLink'>Read More . . .</a>
                         </div>
                         </div>
@@ -41,7 +41,7 @@
             </div>
             </div>
             <br>
-        <% } %>
+        <% }) %>
         <div class='old'><a href='./categories/archive' id='old'>Older Posts ></a></div>
     </div>
     <% include ./partials/rightrail %><br>
