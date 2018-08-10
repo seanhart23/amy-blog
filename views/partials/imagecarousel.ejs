@@ -20,7 +20,7 @@
             <div class='col-md-4' id='image'> 
                 <div id="slideshow1">
                     <% var blogInOrder = blogs.sort() %>
-                    <% for (let y=blogInOrder.length - 2; y >= 0; y--){ %>
+                    <% for (let y=blogInOrder.length - 1; y >= 0; y--){ %>
                     <div>
                         <a href="/posts/<%= blogs[y]._id %>">
                         <img class='cover mainImage1 img-responsive' src="<%= blogs[y].image %>">
@@ -37,7 +37,7 @@
             <div class='col-md-4' id='image'> 
                 <div id="slideshow2">
                     <% var blogInOrder = blogs.sort() %>
-                    <% for (var z=blogInOrder.length - 3; z >= 0; z--){ %>
+                    <% for (var z=blogInOrder.length - 2; z >= 0; z--){ %>
                     <div>            
                         <a href="/posts/<%= blogs[z]._id %>">
                         <img class='cover mainImage2 img-responsive' src="<%= blogs[z].image %>">
