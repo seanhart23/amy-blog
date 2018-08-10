@@ -8,35 +8,34 @@
     
 <div class="ui stackable mobile grid">
     <div class="twelve wide column">
-        <% var blogsinorder = (blogs.length - 1)%>
-        <% for (var e = blogsinorder; e > (blogsinorder - 3); e--){ %>
+        <% blogs.reverse(blogs.created).forEach(function(blog){ %>
             <div class='border'>
                 <div class='ui stackable mobile reversed grid'>
                 <div class='nine wide column' id='preview'> 
                     <div class="meta">
-                        <% var date = new Date(blogs[e].created); %>
+                        <% var date = new Date(blog.created); %>
                         <% var options = {weekday: "long", year: "numeric", month: "long", day: "numeric"};%>  
                         <span id='date'><%= date.toLocaleDateString('en-us', options) %></span>
                     </div>
                     <div class="item" id='title'>
-                        <h2><%= blogs[e].title %></h2>
+                        <h2><%= blog.title %></h2>
                     </div>
                     <div class="content">
                         <div class="description">
-                            <p class='formattedText line-clamp'><%- blogs[e].summary %>...</p>
+                            <p class='formattedText line-clamp'><%- blog.summary %>...</p>
                         </div>
                         <div id='postDetail'>
                         <hr id='postLine'>
                         <div class="extra">
-                            <span id='category'>Topic: <%= blogs[e].category1 %><% if(blogs[e].category2){ %>, <% }; %><%= blogs[e].category2 %><% if(blogs[e].category3){ %>, <% }; %></span>
-                            <a href="/posts/<%= blogs[e]._id %>" id='postLink'>Read More . . .</a>
+                            <span id='category'>Topic: <%= blog.category1 %><% if(blog.category2){ %>, <% }; %><%= blog.category2 %><% if(blogs[e].category3){ %>, <% }; %></span>
+                            <a href="/posts/<%= blog._id %>" id='postLink'>Read More . . .</a>
                         </div>
                         </div>
                     </div> 
                 </div>
                 <div class='seven wide column' id='imageDiv'>
                     <div id="image">
-                        <img class="cover" src="<%= blogs[e].image %>">
+                        <img class="cover" src="<%= blog.image %>">
                     </div>
                 </div>
             </div>
