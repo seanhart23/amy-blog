@@ -40,7 +40,7 @@
             <a href='<%= blog._id %>/comments/new' id='commentButton'>Add a comment</a><br>
             <% blog.comments.forEach(function(comment) {%>
                 <div class='commentBox'>
-                    <% var date = new Date(comment.dated); %>
+                    <% var date = new Date(comment.created); %>
                         <span id='commentDate'><%= date.toDateString('en-US') %></span>
                         <span id='username'><i class="fa fa-user" aria-hidden="true"></i> <%= comment.author %></span>
                         <span id='commentText'><%= comment.text %></span>
