@@ -9,14 +9,10 @@
     <div class="twelve wide column">
 
 <!-- FUNCTION TO ORDER BLOG POSTS -->
-        <% blogs.sort(function(a, b) {
-          return  +new Date(a.date) + +new Date(b.date);
-        }) %>
-        <% blogs.reverse() %>
-        <h5><%= blogs[0].title %></h5>
+        <% blogs.push(blogs.shift()); %>
+        
 <!-- END FUNCTION -->
-
-        <% blogs.slice(0, 3).forEach(function(blog){ %>
+        <% blogs.reverse().slice(0, 3).forEach(function(blog){ %>
             <div class='border'>
                 <div class='ui stackable mobile reversed grid'>
                 <div class='nine wide column' id='preview'> 
