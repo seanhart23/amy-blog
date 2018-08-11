@@ -8,11 +8,12 @@
     
 <div class="ui stackable mobile grid">
     <div class="twelve wide column">
-        <% blogs.sort(function(a, b) {
+        <% test = blogs.sort(function(a, b) {
            a = new Date(a.dateModified);
            b = new Date(b.dateModified);
            return a>b ? -1 : a<b ? 1 : 0;
-           }).slice(-3).reverse().forEach(function(blog){ %>
+           }) %>
+           <% test.slice(-3).reverse().forEach(function(blog){ %>
             <div class='border'>
                 <div class='ui stackable mobile reversed grid'>
                 <div class='nine wide column' id='preview'> 
