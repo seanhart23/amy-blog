@@ -15,6 +15,16 @@ router.get("/", function(req, res){
   });
 });
 
+router.get("/test", function(req, res){
+     Blog.find({}, function(err, blogs){
+      if(err){
+          console.log(err);
+      } else {
+          res.render("test", {blogs: blogs});
+      }
+  });
+});
+
 router.get("/partials/carousel", function(req, res){
      Blog.find({}, function(err, blogs){
       if(err){
